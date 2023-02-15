@@ -11,6 +11,12 @@ import mysql from "mysql2"
 
  //if there is any authentication problem 
 // ALTER USER 'root'@'3306' IDENTIFIED WITH mysql_native_password BY '203010@#NAmaths';
+
+app.use(express.json)
+
+
+
+
  app.get("/",(req,res)=>{
     res.json ("hello this is the backend")
 
@@ -25,15 +31,37 @@ import mysql from "mysql2"
  })
  app.post ("/salesrep",(req,res)=>{
     const q = "INSERT INTO sales_rep ('RID','NIC','registrationdate','fullname','password','email','phoneNo','type','address') VALUES (?)"
-    const values =["RID from backend","NIC from backend","fullname from backend","password from backend","email from backend","phoneNo from backend","type from backend","address from backend"]
+    const values = [
+req.body.RID,
+req.body.NIC,
+req.body.registrationdate,
+req.body.fullname,
+req.body.password,
+req.body.email,
+req.body.phoneNo,
+req.body.type,
+req.body.address,
+    ];
     db.query (q,[values],(err,data)=>{
         if (err) return res.json(err)
-        return res.json("Book has been created.");
+        return res.json("salesrep values has been created successfully");
     })
  })
+ app.post ("/category",(req,res)=>{
+   const q= "INSERT INTO category ('catID','Catname')VALUES (?)"
+   const values =["catID from  backend","CatName from backend"]
+   db.query (q,[values],(err,data)=>{
+      if(err) return res.json(err)
+      return res.json("Items created");
+   })
+ })
+ 
  app.listen( 8800 , ()=>{
     console.log("Connected to backend !1")
 
  })
+
+ 
+
  
  
