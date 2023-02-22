@@ -37,4 +37,7 @@ const styles = StyleSheet.create({
   butt:{
     backgroundColor:'white',
   },
+  butt:{
+    backgroundColor:'white',
+  },
 });
