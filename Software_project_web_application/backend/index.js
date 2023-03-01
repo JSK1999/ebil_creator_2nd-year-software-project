@@ -1,5 +1,6 @@
 import express from "express"
 import mysql from "mysql2"
+import cors from "cors"
 const app = express()
 
 const db = mysql.createConnection({
@@ -13,7 +14,7 @@ const db = mysql.createConnection({
 // ALTER USER 'root'@'3306' IDENTIFIED WITH mysql_native_password BY '203010@#NAmaths';
 
 app.use(express.json())
-
+app.use(cors())
 
 
 
@@ -29,19 +30,27 @@ app.get("/salesrep", (req, res) => {
 
    })
 })
+app.post("/add", (req, res) => {
+   const q = "INSERT * FROM sales_rep"
+   db.query(q, (err, data) => {
+      if (err) return res.json(err);
+      return res.json(data);
+   })
+})
+
 app.post("/salesrep", (req, res) => {
-   const q = "INSERT INTO sales_rep (RID,NIC,registrationdate,fullname,password,email,phoneNo,type,address) VALUES (?,?,?,?,?,?,?,?,?)"
+   const q = "INSERT INTO `projectwork`.`sales_rep` (`RID`, `NIC`, `registrationdate`, `fullname`, `password`, `email`, `phoneNo`, `type`, `address`) VALUES (?,?,?,?,?,?,?,?,?);"
 
    const values = [
-      req.body.RID,
-      req.body.NIC,
+      req.body.rid,
+      req.body.nic,
       req.body.registrationdate,
       req.body.fullname,
       req.body.password,
       req.body.email,
       req.body.phoneNo,
       req.body.type,
-      req.body.address,
+      req.body.address
    ];
 
    // console.log(values);
