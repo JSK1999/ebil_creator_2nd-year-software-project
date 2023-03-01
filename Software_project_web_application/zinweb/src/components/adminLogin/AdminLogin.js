@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './AdminLogin.module.css';
 import Header from '../header';
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 // const [firstName, setFirstName] = useState(null);
@@ -21,6 +22,7 @@ function AdminLogin() {
     type: "",
     address: ""
   });
+  const Navigate = useNavigate()
 
   const handleChange = (e) => {
     setValues((value) => ({ ...value, [e.target.name]: e.target.value }))
@@ -67,6 +69,7 @@ function AdminLogin() {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8800/salesrep", values)
+      Navigate("/")
     } catch (err) {
       console.log(err);
     }

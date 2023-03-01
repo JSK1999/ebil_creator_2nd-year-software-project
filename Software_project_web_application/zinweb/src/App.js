@@ -3,8 +3,11 @@ import AdminLogin from "./components/adminLogin/AdminLogin";
 import Header from './components/header';
 import Adddetails from './salesreplogin/adddetails';
 import Loginin from './salesreplogin/loginin';
-//import {getdatabase}from "firebase/database"
-//import {ref,push,child,update} from "firebase/database";
+import Additem from '/stock/additem';
+import Removeitem from '/stock/removeitem';
+import Updateitem from '/stock/updateitem';
+
+
 
 
 
@@ -26,6 +29,10 @@ function App() {
           <Route path="/add" element={<Adddetails />} />
           <Route path="/login" element={<Loginin />} />
           <Route path="/adminlog" element={<AdminLogin />} />
+          <Route path ="/additem" element={<Additem/>}/>
+          <Route path ="/removeitem" element={<Removeitem/>}/>
+          <Route path ="/updateitem" element={<Updateitem/>}/>
+          
 
         </Routes>
       </BrowserRouter>

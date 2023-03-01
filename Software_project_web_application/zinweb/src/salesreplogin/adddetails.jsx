@@ -5,7 +5,8 @@ import react from 'react'
  import Axios from 'axios'
 
 const Adddetails = () => {
-     const [adddetails,setdetails] = UseState([])
+     const [adddetails,setdetails] = UseState([]);
+   
      UseEffect(()=>{
          const fecthAllAdddetails =async ()=>{
              try{
@@ -19,7 +20,7 @@ const Adddetails = () => {
          }
          fecthAllAdddetails()
 
- },[])
+ },[])/*
   return (
     <div>
         <h1>Zincat SalesRep Details</h1>
@@ -39,7 +40,7 @@ const Adddetails = () => {
         </div>
         <button>add new salesrep</button>
     </div>
-  )
+  )*/
 }
 
 export default Adddetails

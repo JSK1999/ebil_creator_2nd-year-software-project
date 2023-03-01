@@ -29,6 +29,7 @@ app.get("/salesrep", (req, res) => {
       return res.json(data);
 
    })
+
 })
 app.post("/add", (req, res) => {
    const q = "INSERT * FROM sales_rep"
@@ -37,6 +38,17 @@ app.post("/add", (req, res) => {
       return res.json(data);
    })
 })
+
+app.get("/stock",(req,res)=>{
+   const q="SELECT * FROM stock"
+   db.query(q,(err,data)=>{
+      if(err)return res.json(err);
+      return res.json(data);
+   })
+})
+
+
+
 
 app.post("/salesrep", (req, res) => {
    const q = "INSERT INTO `projectwork`.`sales_rep` (`RID`, `NIC`, `registrationdate`, `fullname`, `password`, `email`, `phoneNo`, `type`, `address`) VALUES (?,?,?,?,?,?,?,?,?);"
@@ -61,12 +73,11 @@ app.post("/salesrep", (req, res) => {
 })
 
 
+
 app.listen(8800, () => {
    console.log("Connected to backend !1")
 
 })
-
-
 
 
 
