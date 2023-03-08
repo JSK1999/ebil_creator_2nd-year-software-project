@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ebil_creator",
-    "slug": "ebil_creator",
+    "name": "E-bill",
+    "slug": "E-bill",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
