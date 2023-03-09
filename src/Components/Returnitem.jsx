@@ -5,7 +5,7 @@ import { useState } from "react";
 import { startDetecting } from "react-native/Libraries/Utilities/PixelRatio";
 import { DeviceEventEmitter } from 'react-native'
 import axios from "axios";
-import Background from "../src/Background";
+import Background from "../Background";
 
 
 export default function NewOrder() {

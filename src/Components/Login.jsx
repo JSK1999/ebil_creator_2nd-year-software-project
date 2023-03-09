@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Background from "../src/Background";
-import Derana from "../src/Derana";
-import Btn from "../src/Btn";
+import Background from "../Background";
+import Derana from "../Derana";
+import Btn from "../Btn";
 
 import {
   Text,

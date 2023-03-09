@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './Components/Login';
+// import Login from './src/Components/Login';
 // import Returnitem from './Components/Returnitem;'
 // import Calculater from './Components/Calculater';
-import CreateNewPassword from './Components/CreateNewPassword';
+import CreateNewPassword from './src/Components/CreateNewPassword';
+// import EnterCustomerFeedback from './src/Components/EnterCustomerFeedback/EnterCustomerFeedback';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
     // <Returnitem/>
     // <Calculater/>
     <CreateNewPassword/>
+    // <EnterCustomerFeedback/>
   );
 }
 
