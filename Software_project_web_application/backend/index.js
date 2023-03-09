@@ -1,6 +1,7 @@
 import express from "express"
 import mysql from "mysql2"
 import cors from "cors"
+
 const app = express()
 
 const db = mysql.createConnection({
@@ -40,12 +41,32 @@ app.post("/add", (req, res) => {
 })
 
 app.get("/stock",(req,res)=>{
-   const q="SELECT * FROM stock"
-   db.query(q,(err,data)=>{
+   const p="SELECT * FROM stock"
+   db.query(p,(err,data)=>{
       if(err)return res.json(err);
       return res.json(data);
    })
 })
+
+app.post("/stock", (req, res) => {
+   const p = "INSERT INTO `projectwork`.`stock` (`stockID`, `qty`, `productname`, `name`, `price`, `manufacturedate`, `expirydate`, `discount`) VALUES (?,?,?,?,?,?,?,?);"
+
+   const values = [
+      req.body.stockID,
+      req.body.qty,
+      req.body.productname,
+      req.body.name,
+      req.body.price,
+      req.body.manufacturedate,
+      req.body.expirydate,
+      req.body.discount
+   ];
+   db.query(p, values, (err, data) => {
+      if (err) return res.json(err)
+      return res.json("stock values has been created successfully");
+   })
+})
+
 
 
 
