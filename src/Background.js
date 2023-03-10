@@ -3,7 +3,7 @@ import { View, ImageBackground } from "react-native";
 
 const Background = ({ children }) => {
   return (
-    <View>
+    <View style={{ marginHorizontal: 0, marginVertical: 0 }}>
       <ImageBackground
         source={require("../src/assets/bg.png")}
         style={{ height: "100%", width: "100%", resizeMode: "contain" }}
