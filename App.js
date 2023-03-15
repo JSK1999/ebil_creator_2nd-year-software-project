@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { View } from 'react-native';
+// import { View } from 'react-native';
 
 // import BackgroundOuterWapper from './src/Components/BackgroundOuterWapper';
 // import Login from './src/Components/Login';
@@ -9,7 +9,11 @@ import { View } from 'react-native';
 // import Calculater from './Components/Calculater';
 // import CreateNewPassword from './src/Components/CreateNewPassword/CreateNewPassword';
 // import EnterCustomerFeedback from './src/Components/EnterCustomerFeedback/EnterCustomerFeedback';
-import BellowButtonSets from './src/Components/BellowButtonSets/BellowButtonSets';
+// import BellowButtonSets from './src/Components/BellowButtonSets/tabs';
+// import BottomNav from './src/Components/BottomNav';
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from './src/Components/BellowButtonSets/tabs';
+
 
 export default function App() {
   return (
@@ -19,10 +23,10 @@ export default function App() {
     // <CreateNewPassword/>
     // <EnterCustomerFeedback/>
     // <BackgroundOuterWapper/>
-        <View style={{ flex: 1 }}>
-      {/* Your other app components here */}
-      <BellowButtonSet />
-    </View>
+    // <BottomNav/>
+    <NavigationContainer>
+      <Tabs/>
+    </NavigationContainer>
 
   );
 }
