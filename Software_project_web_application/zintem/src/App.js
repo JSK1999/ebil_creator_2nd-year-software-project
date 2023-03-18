@@ -11,38 +11,7 @@ import{
 from "react-router-dom";
 
 
-
-
-
-class App extends React.Component{
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-        Stock: [],
-        DataisLoaded: false
-    };
-}
-componentDidMount() 
-{fetch(
-  "http://localhost:8800/stock")
-              .then((res) => res.json())
-              .then((json) => {
-                  this.setState({
-                      Stock: json,
-                      DataisLoaded: true
-                  });
-              })
-            }
-              render() {
-                const { DataisLoaded, Stock } = this.state;
-                if (!DataisLoaded) return <div>
-                    <h1> Pleses wait some time.... </h1> </div> ;
-
-
-
-function App() {
+ function app() {
   return (
     <div className="App">
 
@@ -60,9 +29,38 @@ function App() {
 )
 }
 
+
+
+class App extends React.Component{
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        Stock: [],
+        DataisLoaded: false
+    };
+}
+
+componentDidMount() 
+{fetch(
+  "http://localhost:8800/stock")
+              .then((res) => res.json())
+              .then((json) => {
+                  this.setState({
+                      Stock: json,
+                      DataisLoaded: true
+                  });
+              })
+            }
+              render() {
+                const { DataisLoaded, Stock } = this.state;
+                if (!DataisLoaded) return <div>
+                    <h1> Pleses wait some time.... </h1> </div> ;
                      return (
                       <div className="App">
-<h1> Fetch data from an api in react </h1>  {
+                        
+<h1> Zincat stores Stock details </h1>  {
                 Stock.map((Stock) => ( 
                 <ol key = { Stock.ID } >
                     stockID: {Stock.ID }, 
@@ -75,9 +73,6 @@ function App() {
                     discount:{Stock.discount}
 
                     </ol>
-
-
-
 
                 ))
             }

@@ -16,6 +16,7 @@ const db = mysql.createConnection({
 
 app.use(express.json())
 app.use(cors())
+//app.use(express.static(path.join(__dirname,'static')));
 
 
 
@@ -32,6 +33,9 @@ app.get("/salesrep", (req, res) => {
    })
 
 })
+
+
+
 app.post("/add", (req, res) => {
    const q = "INSERT * FROM sales_rep"
    db.query(q, (err, data) => {
@@ -47,6 +51,39 @@ app.get("/stock",(req,res)=>{
       return res.json(data);
    })
 })
+
+app.get("/user", (req, res) => {
+   const r = "SELECT * FROM userpw "
+   db.query(r, (err, data) => {
+      if (err) return res.json(err);
+      return res.json(data);
+
+   })
+
+})
+
+app.post("/userreg", (req, res) => {
+
+
+   const r = "INSERT INTO `projectwork`.`userpw` (`userid`, `password`) VALUES (?,?);"
+
+   const values = [
+      req.body.userid,
+      req.body.password
+     
+   ];
+   db.query(r, values, (err, data) => {
+      if (err) {
+         return res.json(err)
+         return res.json("usernamepassword values has been created successfully");
+      }else {
+         res.send ({message :"No user found"})
+      }
+     
+     
+   })
+})
+
 
 app.post("/stock", (req, res) => {
    const p = "INSERT INTO `projectwork`.`stock` (`stockID`, `qty`, `productname`, `name`, `price`, `manufacturedate`, `expirydate`, `discount`) VALUES (?,?,?,?,?,?,?,?);"
