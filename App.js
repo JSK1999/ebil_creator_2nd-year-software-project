@@ -12,7 +12,7 @@ import React from 'react';
 // import BellowButtonSets from './src/Components/BellowButtonSets/tabs';
 // import BottomNav from './src/Components/BottomNav';
 import { NavigationContainer } from "@react-navigation/native";
-import Tabs from './src/Components/BellowButtonSets/tabs';
+import Tabs from './src/Components/NAvigationButton';
 
 
 export default function App() {
@@ -24,9 +24,10 @@ export default function App() {
     // <EnterCustomerFeedback/>
     // <BackgroundOuterWapper/>
     // <BottomNav/>
-    <NavigationContainer>
-      <Tabs/>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <Tabs/>
+    // </NavigationContainer>
+    <Tabs/>
 
   );
 }
