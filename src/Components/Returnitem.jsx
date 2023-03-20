@@ -8,7 +8,7 @@ import axios from "axios";
 import Background from "../Background";
 
 
-export default function NewOrder() {
+const ReturnItem = () => {
   // const [hi,setHi]=useState('');
   // const bb=()=>{axios.get('http://localhost:3001/shop/ReadItemGroup')
   // .then(function (response) {
@@ -160,6 +160,9 @@ export default function NewOrder() {
       // </ImageBackground>
   );
 }
+
+export default ReturnItem;
+
 
 const styles = StyleSheet.create({
   heading1: {

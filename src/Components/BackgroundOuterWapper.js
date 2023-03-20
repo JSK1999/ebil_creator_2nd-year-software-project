@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image ,Text} from 'react-native';
 import Background from '../Background';
 
-const App = () => {
+const BackgroundOuterWapper = () => {
   return (
     <View style={styles.container}>
       <Background></Background>
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default BackgroundOuterWapper;
