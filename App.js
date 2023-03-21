@@ -5,7 +5,7 @@ import React from 'react';
 
 // import BackgroundOuterWapper from './src/Components/BackgroundOuterWapper';
 // import Login from './src/Components/Login';
-import ReturnItem from './src/Components/ReturnItem';
+// import ReturnItem from './src/Components/ReturnItem/ReturnItem';
 // import Calculater from './Components/Calculater';
 // import CreateNewPassword from './src/Components/CreateNewPassword/CreateNewPassword';
 // import EnterCustomerFeedback from './src/Components/EnterCustomerFeedback/EnterCustomerFeedback';
@@ -13,12 +13,14 @@ import ReturnItem from './src/Components/ReturnItem';
 // import BottomNav from './src/Components/BottomNav';
 // import { NavigationContainer } from "@react-navigation/native";
 // import Tabs from './src/Components/NAvigationButton';
+// import ViewReturn from './src/Components/ViewReturn/ViewReturn'
+import Table from './src/Components/ViewReturn/ViewReturn'
 
 
 export default function App() {
   return (
     // <Login/>
-    <ReturnItem/>
+    // <ReturnItem/>
     // <Calculater/>
     // <CreateNewPassword/>
     // <EnterCustomerFeedback/>
@@ -26,8 +28,9 @@ export default function App() {
     // <BottomNav/>
     // <NavigationContainer>
     //   <Tabs/>
-    // </NavigationContainer>
+    // <NavigationContainer/>
     // <Tabs/>
+    <Table/>
 
   );
 }
