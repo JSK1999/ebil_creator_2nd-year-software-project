@@ -5,8 +5,9 @@ import Background from '../Background';
 const BackgroundOuterWapper = () => {
   return (
     <View style={styles.container}>
-      <Background></Background>
-      <View style={styles.outerWrapper} />
+      
+      <Background><View style={styles.outerWrapper}></View></Background>
+      {/* <View style={styles.outerWrapper} /> */}
     </View>
   );
 };
@@ -28,6 +29,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderTopLeftRadius:30,
     borderTopRightRadius:30,
+    opacity:0.5,
+    zIndex:-500,
+    
 
   },
 });

@@ -12,12 +12,15 @@ import React from 'react';
 // import BellowButtonSets from './src/Components/BellowButtonSets/tabs';
 // import BottomNav from './src/Components/BottomNav';
 // import { NavigationContainer } from "@react-navigation/native";
- import Tabs from './src/Components/NavigationButton';
- import Tabss from './src/Components/NAvigationButton_02';
+//  import Tabs from './src/Components/NavigationButton';
+//  import Tabss from './src/Components/NAvigationButton_02';
 // import ViewReturn from './src/Components/ViewReturn/ViewReturn'
 // import Table from './src/Components/ViewReturn/ViewReturn'
-  // import ItemList from './src/Components/DaliItemList/DaliyItemList';
-  import NavigationBar from './src/Components/new';
+//   import ItemList from './src/Components/DaliItemList/DaliyItemList';
+//   import NavigationBar from './src/Components/new';
+// import Sidebar from './src/Components/SideBar'
+// import Sidebar01 from './src/Components/SideBar_01';
+import ItemList from './src/Components/DaliItemList/DaliyItemList';
 
 
 export default function App() {
@@ -30,13 +33,16 @@ export default function App() {
     // <BackgroundOuterWapper/>
     // <BottomNav/>
     // <NavigationContainer>
-    //   <Tabs/>
+    // <Tabs/>
     // <NavigationContainer/>
-    <Tabss/>
+    // <Tabss/>
     // <Table/>
     // <ItemList/>
     // <NavigationBar/>
     // <NavigationBar/>
+    // <Sidebar/>
+    // <Sidebar01/>
+    <ItemList/>
 
   );
 }

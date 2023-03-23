@@ -9,20 +9,27 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-native-picker/picker": "2.4.8",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@types/react": "~18.0.24",
     "@types/react-native": "~0.70.6",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",
+    "i": "^0.3.7",
+    "npm": "^9.6.2",
     "react": "18.1.0",
+    "react-devtools": "^4.27.3",
     "react-native": "0.70.5",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "~2.8.0",
+    "react-native-svg": "13.4.0",
     "react-native-table-component": "^1.2.2",
+    "react-native-vector-icons": "^9.2.0",
     "typescript": "^4.6.3"
   },
   "devDependencies": {

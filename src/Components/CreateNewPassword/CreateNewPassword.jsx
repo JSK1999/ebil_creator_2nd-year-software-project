@@ -9,6 +9,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./CreateNewPasswordStyle";
 import Background from "../../Background";
+import BackgroundOuterWapper from "../BackgroundOuterWapper";
 // import BackgroundOuterWapper from "../BackgroundOuterWapper";
 
 const PasswordInput = ({ placeholder, value, onChangeText }) => {
@@ -58,7 +59,7 @@ const CreateNewPassword = () => {
   };
 
   return (
-    <Background>
+    <BackgroundOuterWapper>
       <View>
         <Text style={styles.title}>Create New Password</Text>
         <Text style={styles.paragraph}>
@@ -102,7 +103,7 @@ const CreateNewPassword = () => {
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>RESET PASSWORD</Text>
       </TouchableOpacity>
-    </Background>
+    </BackgroundOuterWapper>
   );
 };
 export default CreateNewPassword;
