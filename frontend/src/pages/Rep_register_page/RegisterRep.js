@@ -39,19 +39,19 @@ const RegisterRep = () => {
     console.log("submitted");
     const inputValues ={
       fullname:nameInputRef.current.value,
-      mobileValue:mobileInputRef.current.value,
-      emailValue:emailInputRef.current.value,
-      passwordValue:passwordInputRef.current.value,
-      cpasswordValue:cPasswordInputRef.current.value,
-      nicValue:nicInputRef.current.value,
+      phonenumber:mobileInputRef.current.value,
+      email:emailInputRef.current.value,
+      password:passwordInputRef.current.value,
+      reenterpassword:cPasswordInputRef.current.value,
+      NIC:nicInputRef.current.value,
       adressValue:addressInputRef.current.value,
       dobValue:dobInputRef.current.value,
       documentValue:documentInputRef.current.value,
-      dateValue:dateInputRef.current.value,
-      genderValue:genderInput
+      registrationdate:dateInputRef.current.value,
+      sex:genderInput
     }
 
-    if(inputValues.fullname.trim()===''|| inputValues.mobileValue.trim()===''||inputValues.emailValue.trim()===''|| inputValues.passwordValue.trim()===''||inputValues.cpasswordValue.trim()===''|| inputValues.nicValue.trim()===''||inputValues.adressValue.trim()===''|| inputValues.dobValue===''|| inputValues.dateValue===''){
+    if(inputValues.fullname.trim()===''|| inputValues.phonenumber.trim()===''||inputValues.email.trim()===''|| inputValues.password.trim()===''||inputValues.reenterpassword.trim()===''|| inputValues.NIC.trim()===''||inputValues.adressValue.trim()===''|| inputValues.dobValue===''|| inputValues.registrationdate===''){
       setValidationLogic(true);
       console.log('setting true')
       return;
@@ -67,7 +67,7 @@ const RegisterRep = () => {
 
   // password validation
 
-  if(inputValues.passwordValue!== inputValues.cpasswordValue){
+  if(inputValues.password!== inputValues.reenterpassword){
     setPasswordValidLogic(true);
     return;
   }else{
@@ -76,7 +76,7 @@ const RegisterRep = () => {
 
   // email validation
 
-  const emailString = String(inputValues.emailValue);
+  const emailString = String(inputValues.email);
 
 
  if(!(emailString.includes('@'))){
@@ -88,7 +88,7 @@ const RegisterRep = () => {
  }
 
  //NIC validation
- const nicString = String(inputValues.nicValue);
+ const nicString = String(inputValues.NIC);
  if(!(nicString.match('V')||nicString.includes('v'))){
   setNicValidLogic(true);
   console.log("nic does not has v");
@@ -99,7 +99,7 @@ const RegisterRep = () => {
 
 
 
-    console.log(inputValues.fullname,inputValues.mobileValue,inputValues.emailValue,inputValues.passwordValue,inputValues.cpasswordValue,inputValues.nicValue,inputValues.adressValue,inputValues.dobValue,inputValues.documentValue,inputValues.dateValue,inputValues.genderValue);
+    console.log(inputValues.fullname,inputValues.phonenumber,inputValues.email,inputValues.password,inputValues.reenterpassword,inputValues.nicValue,inputValues.adressValue,inputValues.dobValue,inputValues.documentValue,inputValues.registrationdate,inputValues.sex);
 
     console.log("validlogic",validationLogic,"email logic",emailValidLogic,"password logic",passwordValidLogic,"nic logic",nicValidLogic);
 
