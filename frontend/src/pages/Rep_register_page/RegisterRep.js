@@ -38,7 +38,7 @@ const RegisterRep = () => {
     event.preventDefault();
     console.log("submitted");
     const inputValues ={
-      nameValue:nameInputRef.current.value,
+      fullname:nameInputRef.current.value,
       mobileValue:mobileInputRef.current.value,
       emailValue:emailInputRef.current.value,
       passwordValue:passwordInputRef.current.value,
@@ -51,7 +51,7 @@ const RegisterRep = () => {
       genderValue:genderInput
     }
 
-    if(inputValues.nameValue.trim()===''|| inputValues.mobileValue.trim()===''||inputValues.emailValue.trim()===''|| inputValues.passwordValue.trim()===''||inputValues.cpasswordValue.trim()===''|| inputValues.nicValue.trim()===''||inputValues.adressValue.trim()===''|| inputValues.dobValue===''|| inputValues.dateValue===''){
+    if(inputValues.fullname.trim()===''|| inputValues.mobileValue.trim()===''||inputValues.emailValue.trim()===''|| inputValues.passwordValue.trim()===''||inputValues.cpasswordValue.trim()===''|| inputValues.nicValue.trim()===''||inputValues.adressValue.trim()===''|| inputValues.dobValue===''|| inputValues.dateValue===''){
       setValidationLogic(true);
       console.log('setting true')
       return;
@@ -99,7 +99,7 @@ const RegisterRep = () => {
 
 
 
-    console.log(inputValues.nameValue,inputValues.mobileValue,inputValues.emailValue,inputValues.passwordValue,inputValues.cpasswordValue,inputValues.nicValue,inputValues.adressValue,inputValues.dobValue,inputValues.documentValue,inputValues.dateValue,inputValues.genderValue);
+    console.log(inputValues.fullname,inputValues.mobileValue,inputValues.emailValue,inputValues.passwordValue,inputValues.cpasswordValue,inputValues.nicValue,inputValues.adressValue,inputValues.dobValue,inputValues.documentValue,inputValues.dateValue,inputValues.genderValue);
 
     console.log("validlogic",validationLogic,"email logic",emailValidLogic,"password logic",passwordValidLogic,"nic logic",nicValidLogic);
 
@@ -123,7 +123,7 @@ const RegisterRep = () => {
   return (
     <div className={classes.main_div}>
       {!buttonLogic &&(<div className={classes.secondry_div}>
-        <img  onClick={imgOnclickHandler} src={logo} alt="zr red logo" />
+        <img  className={classes.zr_logo}  onClick={imgOnclickHandler} src={logo} alt="zr red logo" />
         <form onSubmit={formSubmitHandler} className={classes.form_main}>
           <h2 className={classes.form_heading}>
             Sales Representative Registration
