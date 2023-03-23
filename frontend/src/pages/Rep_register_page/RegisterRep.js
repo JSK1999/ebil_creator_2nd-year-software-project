@@ -110,7 +110,9 @@ const RegisterRep = () => {
     }
   };
 
-  
+  const imgOnclickHandler = ()  =>{
+      navigation("/");
+  }
 
 
 
@@ -121,7 +123,7 @@ const RegisterRep = () => {
   return (
     <div className={classes.main_div}>
       {!buttonLogic &&(<div className={classes.secondry_div}>
-        <img src={logo} alt="zr red logo" />
+        <img  onClick={imgOnclickHandler} src={logo} alt="zr red logo" />
         <form onSubmit={formSubmitHandler} className={classes.form_main}>
           <h2 className={classes.form_heading}>
             Sales Representative Registration

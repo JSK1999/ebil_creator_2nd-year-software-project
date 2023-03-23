@@ -1,4 +1,13 @@
 
+.item_main{
+    background-color: rgb(253, 246, 246);
+    height:100vh;
+}
+.item_style{
+    margin-top: 75px;
+    /* border: 1px solid black; */
+}
+
 .nav_input{
     padding-left: 10px;
     height:34px;
