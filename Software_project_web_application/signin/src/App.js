@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import React ,{useState} from "react";
 import axios from 'axios';
 import './App.css';
@@ -14,6 +14,8 @@ const[passwordReg,setpasswordReg] = useState("");
 const[userid,setuserid] = useState("");
 const[password,setpassword] = useState("");
 
+const [loginStatus,setloginStatus] = useState("");
+
 const register = ()=>{
   axios.post("http://localhost:8800/userreg",{userid:useridReg,
   password:passwordReg,
@@ -25,11 +27,16 @@ const register = ()=>{
 };
 
 const login = ()=>{
-  axios.post("http://localhost:8800/userlog",{userid:userid,
+  axios.post("http://localhost:8800/userpw",{userid:userid,
   password:password,
 })
   .then((response)=>{
-    console.log(response);
+    if(response.data.message){
+      setloginStatus(response.data.message)
+    }else{
+      setloginStatus(response.data[0].userid)
+    }
+
   });
 
 };
@@ -38,25 +45,22 @@ const login = ()=>{
     <div>
 <div className="App">
   <div className="registration">
-    <h1>Registration</h1><br>
-   
-    
-    </br>
-    <label>userid</label>
+    <h1>Registration</h1>
+    <label>userid </label>
     <input type="text" onChange={(e)=>{
       setuseridReg(e.target.value);
     }}
     />
-    
-    <label>Password</label>
+  
+    <label>Password </label>
     <input type = "text"onChange={(e)=>{
       setpasswordReg(e.target. value);
     }}
     />
-    <button onClick={register}>Register</button>
+    <button onClick={register}>register</button>
   </div>
   <div className="login">
-    <h1>Loginin</h1>
+    <h1>Login</h1>
     <input type = "text" placeholder="userid..." onChange={(e)=>{
       setuserid(e.target.value);
     }}
@@ -65,10 +69,11 @@ const login = ()=>{
       setpassword(e.target.value);
     }}
     />
-    <button onClick={login}>Login</button>
+    <button onClick={login}>login</button>
     
   </div>
 </div>
+<h1>{loginStatus}</h1>
     </div>
 
   );
