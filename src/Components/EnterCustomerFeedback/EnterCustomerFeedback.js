@@ -4,9 +4,9 @@ import { Text, View, StyleSheet, Button, TouchableOpacity,Image,ImageBackground,
 
 const EnterCustomerFeedback = () => {
    return (
-    <view>
+    <View>
         <Text>Shops</Text>
-     </view>
+     </View>
     
    );
 }

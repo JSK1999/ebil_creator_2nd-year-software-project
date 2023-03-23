@@ -12,9 +12,12 @@ import React from 'react';
 // import BellowButtonSets from './src/Components/BellowButtonSets/tabs';
 // import BottomNav from './src/Components/BottomNav';
 // import { NavigationContainer } from "@react-navigation/native";
-// import Tabs from './src/Components/NAvigationButton';
+ import Tabs from './src/Components/NavigationButton';
+ import Tabss from './src/Components/NAvigationButton_02';
 // import ViewReturn from './src/Components/ViewReturn/ViewReturn'
-import Table from './src/Components/ViewReturn/ViewReturn'
+// import Table from './src/Components/ViewReturn/ViewReturn'
+  // import ItemList from './src/Components/DaliItemList/DaliyItemList';
+  import NavigationBar from './src/Components/new';
 
 
 export default function App() {
@@ -29,8 +32,11 @@ export default function App() {
     // <NavigationContainer>
     //   <Tabs/>
     // <NavigationContainer/>
-    // <Tabs/>
-    <Table/>
+    <Tabss/>
+    // <Table/>
+    // <ItemList/>
+    // <NavigationBar/>
+    // <NavigationBar/>
 
   );
 }
