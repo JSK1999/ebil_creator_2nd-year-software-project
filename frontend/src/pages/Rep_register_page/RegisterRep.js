@@ -4,6 +4,13 @@ import backgroundDesign from "../../assets/Background vector group.png";
 import logo from "../../assets/zr red.png";
 import { useNavigate } from "react-router-dom";
 import ResitrationSuccess from "./ResitrationSuccess";
+import axios from "axios";
+
+
+
+
+
+
 
 const RegisterRep = () => {
   const nameInputRef = useRef();
@@ -34,6 +41,19 @@ const RegisterRep = () => {
     setGenderInput(event.target.value);
    
   }
+
+// const handleClick = async e =>{
+//   e.preventDefault();
+//   try{
+//     await axios.post ("http://localhost:8800/salesrep",inputValues)
+
+//   }catch(err){
+//     console.log(err);
+
+//   }
+// }
+
+
   const formSubmitHandler = (event) => {
     event.preventDefault();
     console.log("submitted");
@@ -105,6 +125,23 @@ const RegisterRep = () => {
 
     if(!((validationLogic ===true)||(passwordValidLogic ===true)||(emailValidLogic ===true)||(nicValidLogic ===true))){
       console.log('validation all are correct');
+
+
+
+        // sending data to backend
+
+        const handleClick = async e =>{
+          e.preventDefault();
+          try{
+            await axios.post ("http://localhost:8800/salesrep",inputValues)
+        
+          }catch(err){
+            console.log(err);
+        
+          }
+        }
+
+        handleClick();
       setButtonLogic(true);
       // navigation("/");
     }
