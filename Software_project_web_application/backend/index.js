@@ -126,6 +126,12 @@ app.post("/userreg", (req, res) => {
 })
 
 
+
+
+
+
+
+
 app.post("/stock", (req, res) => {
    const p = "INSERT INTO `projectwork`.`stock` (`stockID`, `qty`, `productname`, `name`, `price`, `manufacturedate`, `expirydate`, `discount`) VALUES (?,?,?,?,?,?,?,?);"
 
