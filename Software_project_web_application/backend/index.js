@@ -154,6 +154,56 @@ app.post("/stock", (req, res) => {
 
 
 
+app.post("/salesreptempadd", (req, res) => {
+   const q = "INSERT INTO `projectwork`.`sales_rep` (`fullname`, `NIC`, `registrationdate`,  `password`,`reenterpassword`, `email`, `phonenumber`,  `sex`) VALUES (?,?,?,?,?,?,?,?);"
+
+   const values = [
+      req.body.fullname,
+      req.body.NIC,
+      req.body.registrationdate,
+      req.body.password,
+      req.body.reenterpassword,
+      req.body.email,
+      req.body.phonenumber,
+      req.body.sex,
+   
+   ];
+
+   // console.log(values);
+   db.query(q, values, (err, data) => {
+      if (err) return res.json(err)
+      return res.json("salesrep values has been created temporarily successfully");
+   })
+})
+
+
+
+app.get("/salesreptemp", (req, res) => {
+   const r = "SELECT * FROM sales_repTemp "
+   db.query(r, (err, data) => {
+      if (err) return res.json(err);
+      return res.json(data);
+
+   })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.post("/salesrep", (req, res) => {
    const q = "INSERT INTO `projectwork`.`sales_rep` (`RID`, `NIC`, `registrationdate`, `fullname`, `password`, `email`, `phoneNo`, `type`, `address`) VALUES (?,?,?,?,?,?,?,?,?);"
