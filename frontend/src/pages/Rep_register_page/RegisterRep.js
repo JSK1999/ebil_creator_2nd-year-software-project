@@ -178,7 +178,7 @@ const RegisterRep = () => {
                 </td>
 
                 <td>
-                  Mobile <br></br>
+                NIC <br></br>
                   <input
                     ref={mobileInputRef}
                     type="text"

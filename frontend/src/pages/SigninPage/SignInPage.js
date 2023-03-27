@@ -4,20 +4,24 @@ import { Link, useNavigate } from "react-router-dom";
 import classes from "./SignIn.module.css";
 import backgroundLogo from "../../assets/Background vector group.png";
 import logo from "../../assets/zr red.png";
+import axios from "axios";
 
 const SignInPage = () => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
+  const [isVerified, setIsVerified] = useState(true);
 
   const navigate = useNavigate();
 
-  const checkUser = value =>{
-    if(value ==='admin'){
-        navigate('/admin/temp_reps')
-    }
-    if(value ==='stock'){
+  const checkUser = value => {
+    debugger;
+    if (value === 'admin') {
+      navigate('/admin/temp_reps')
+    } else if (value === 'stock') {
       navigate('/stock_keeper/item_list')
-  }
+    } else {
+      navigate('/');
+    }
   }
 
   const inputUsernameHandler = (event) => {
@@ -31,7 +35,19 @@ const SignInPage = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(enteredUsername, enteredPassword);
-    checkUser(enteredUsername);
+    axios.post("http://localhost:8800/userpw", {
+      userid: enteredUsername,
+      password: enteredPassword,
+    }).then(data => {
+      debugger;
+      if (data.data.status) {
+        console.log("Loged in");
+        checkUser(enteredUsername);
+        setIsVerified(true);
+      } else {
+        setIsVerified(false);
+      }
+    });
     setEnteredUsername(""); // create functions for checking admin or stock manager and call in here
     setEnteredPassword("");
   };
@@ -51,6 +67,7 @@ const SignInPage = () => {
           <p className={classes.signIn_third_div_para}>
             Hello there! Sign in and manage <br></br>your works
           </p>
+          {isVerified ? <></> : <p>Invalid Credentials</p>}
           <form
             className={classes.signIn_third_div_input_form}
             onSubmit={submitHandler}
@@ -67,7 +84,7 @@ const SignInPage = () => {
               value={enteredPassword}
               onChange={inputPasswordeHandler}
             />
-            <button>Sign in</button>
+            <button type="submit">Sign in</button>
           </form>
         </div>
       </div>
