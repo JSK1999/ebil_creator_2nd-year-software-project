@@ -1,11 +1,8 @@
 import React from 'react'
 
-const loginin = () => {
+function loginin() {
   return (
-  <div className='form'>
-    <h1> Add salesrep</h1>
-  
-  </div>
+    <div>loginin</div>
   )
 }
 

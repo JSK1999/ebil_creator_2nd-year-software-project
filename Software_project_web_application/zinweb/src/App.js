@@ -1,10 +1,11 @@
 import React from 'react';
 import AdminLogin from "./components/adminLogin/AdminLogin";
-import Header from './components/header';
+//import Header from './components/header';
 import Adddetails from './salesreplogin/adddetails';
 import Loginin from './salesreplogin/loginin';
-//import {getdatabase}from "firebase/database"
-//import {ref,push,child,update} from "firebase/database";
+
+
+
 
 
 
@@ -26,7 +27,8 @@ function App() {
           <Route path="/add" element={<Adddetails />} />
           <Route path="/login" element={<Loginin />} />
           <Route path="/adminlog" element={<AdminLogin />} />
-
+         
+        
         </Routes>
       </BrowserRouter>
 

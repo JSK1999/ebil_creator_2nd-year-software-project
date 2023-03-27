@@ -37,7 +37,7 @@ body{
     padding: 20px 10px;
 }
 
-.form-body > *{
+.form-body {
     padding: 5px;
 }
 
